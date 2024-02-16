@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentário sobre ser gay - Por Victor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Documentário sobre ser gay - Por Victor</h1>
+        <nav>
+            <ul>
+                <li><a href="#documentario" onclick="carregarSecao('documentario')">Documentário</a></li>
+                <li><a href="#sobre" onclick="carregarSecao('sobre')">Sobre</a></li>
+                <li><a href="#historia" onclick="carregarSecao('historia')">Minha História</a></li>
+                <li><a href="#fotos" onclick="carregarSecao('fotos')">Minhas Fotos</a></li>
+                <li><a href="#instagram" onclick="carregarSecao('instagram')">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="conteudo">
+        <!-- Conteúdo do Documentário será carregado aqui dinamicamente -->
+    </main>
+
+    <footer>
+        <p>© 2024 Victor</p>
+    </footer>
+
+    <script>
+        // Carrega inicialmente a seção Documentário
+        carregarSecao('documentario');
+
+        function carregarSecao(secao) {
+            let conteudo;
+            switch (secao) {
+                case 'documentario':
+                    conteudo = `
+                        <h2>Documentário</h2>
+                        <p>Olá! Meu nome é Victor e tenho 14 anos. Decidi criar este documentário para compartilhar minha jornada e experiências como uma pessoa gay. Este documentário tem como objetivo fornecer informações e recursos para aqueles que desejam entender melhor o que significa ser gay, especialmente para jovens como eu.</p>
+                        <p>Aqui, você encontrará uma variedade de informações úteis, incluindo definições, recursos de apoio, histórias pessoais e dicas para lidar com desafios comuns enfrentados pela comunidade LGBTQ+. Espero que este documentário possa inspirar e ajudar outras pessoas.</p>
+                    `;
+                    break;
+                case 'sobre':
+                    conteudo = `
+                        <h2>Sobre</h2>
+                        <p>Oi! Meu nome é Victor, tenho 14 anos e sou uma pessoa gay. Desde cedo, percebi que minha atração por pessoas do mesmo sexo era diferente do que muitos ao meu redor experimentavam. Com o tempo, comecei a entender e aceitar minha identidade e orientação sexual.</p>
+                        <p>Decidi criar este documentário para compartilhar minha história e ajudar outras pessoas que podem estar passando por experiências semelhantes. Quero fornecer informações, recursos de apoio e um espaço seguro para discutir questões relacionadas à comunidade LGBTQ+.</p>
+                        <p>Este documentário não é apenas sobre mim; é sobre todas as pessoas LGBTQ+ que enfrentam desafios, celebram suas identidades e lutam por igualdade. Espero que esta seja uma fonte de inspiração e apoio para você.</p>
+                    `;
+                    break;
+                case 'historia':
+                    conteudo = `
+                        <h2>Minha História</h2>
+                        <textarea id="historiaUsuario" placeholder="Digite sua história aqui" rows="10"></textarea>
+                        <button onclick="compartilharHistoria()">Compartilhar minha história</button>
+                    `;
+                    break;
+                case 'fotos':
+                    conteudo = `
+                        <h2>Minhas Fotos</h2>
+                        <div class="foto">
+                            <img src="./img/gay.png" alt="Foto de Victor">
+                        </div>
+                    `;
+                    break;
+                case 'instagram':
+                    conteudo = `
+                        <h2>Instagram</h2>
+                        <p>Siga-me no Instagram para ver mais fotos e atualizações!</p>
+                        <a href="https://www.instagram.com/__victorqw__/" target="_blank" rel="noopener noreferrer">Siga @__victorqw__</a>
+                    `;
+                    break;
+                default:
+                    conteudo = '';
+            }
+            document.getElementById('conteudo').innerHTML = conteudo;
+        }
+
+        function compartilharHistoria() {
+            // Aqui você pode adicionar a lógica para compartilhar a história
+            // Por enquanto, apenas limpamos o texto do textarea
+            document.getElementById('historiaUsuario').value = '';
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
